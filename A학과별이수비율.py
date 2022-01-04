@@ -12,6 +12,7 @@ compc = comp.groupby(['학과']).count()
 # compc.head()
 
 rate=compc/all
+rate=rate.round(2)
 # rate.head()
 
 ratedesc=rate.sort_values('A과목이수',ascending=False)
