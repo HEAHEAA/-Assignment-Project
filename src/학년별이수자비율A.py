@@ -17,3 +17,4 @@ rater=rate.round(2)
 
 ratedesc=rater.sort_values('A과목이수',ascending=False)
 ratedesc.head()
+
