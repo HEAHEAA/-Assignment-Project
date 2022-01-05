@@ -13,7 +13,7 @@ all.head()
 second = df.groupby(['연도'and'학과'])
 second.head()
 
-q1=df.groupby(['연도']).size
+df.groupby(['연도']).size
 
 
 
