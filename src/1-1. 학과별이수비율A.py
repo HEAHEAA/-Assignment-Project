@@ -33,7 +33,7 @@ rater=rate.round(2)
 ratedesc=rater.sort_values('A과목이수',ascending=False)
 # ratedesc.head()
 crate = ratedesc.reset_index()
-# crate.head()
+crate.head()
 
 # 3.데이터 시각화
 plt.title('A과목이수율')
