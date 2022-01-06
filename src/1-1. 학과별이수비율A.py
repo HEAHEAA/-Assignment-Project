@@ -42,6 +42,7 @@ plt.ylabel('A과목이수')
 plt.bar(crate['학과'],crate['A과목이수'],label='x축:학과 y축:이수율')
 plt.legend()
 plt.ylim([0,.25])
+plt.xticks(rotation=45, ha='right')
 plt.show()
 
 # compc = compc.reset_index()
