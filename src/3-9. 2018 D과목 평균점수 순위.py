@@ -1,3 +1,4 @@
+#3-9. 2018 D과목 평균점수 순위.py
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,25 +11,25 @@ matplotlib.rcParams['axes.unicode_minus'] = False #한글폰트 -깨짐현상
 df = pd.read_csv('./-Assignment-Project/data/2. 15-19년전체집계.csv', usecols=[0,1,2,7])
 df.head()
 
-year2019 = df['연도'] == 2019
-year2019
-students2019 = df[year2019]
-students2019
+year2018 = df['연도'] == 2018
+year2018
+students2018 = df[year2018]
+students2018
 #-----------------------------------------------
-new2019 = students2019['학생구분'] == '신입생'
-fm2019 = students2019[new2019]
-fm2019
+new2018 = students2018['학생구분'] == '신입생'
+fm2018 = students2018[new2018]
+fm2018
 #---------------------------------------------
-old2019 = students2019['학생구분'] == '재학생'
-sn2019 = students2019[old2019]
-sn2019
+old2018 = students2018['학생구분'] == '재학생'
+sn2018 = students2018[old2018]
+sn2018
 
 
-fmdesc=fm2019.sort_values('D과목',ascending=False)
+fmdesc=fm2018.sort_values('D과목',ascending=False)
 fmdesc
 
 #------------------------------------------------------
-sndesc = sn2019.sort_values('D과목',ascending=False)
+sndesc = sn2018.sort_values('D과목',ascending=False)
 sndesc
 
 #------------------------------------------
@@ -49,7 +50,7 @@ plt.xticks(list(deDic.values()), labels=list(deDic.keys()), rotation=45, ha='rig
 #신입생 학과 -> 숫자 0:기계, 1:화학
 
 #재학생 학과 -> 0.3:기계, 위의 신입생 학과에 + 0.3
-plt.title('2019학과별D과목점수')
+plt.title('2018학과별D과목점수')
 plt.xlabel('학과')
 plt.ylabel('D과목점수')
 plt.legend()
