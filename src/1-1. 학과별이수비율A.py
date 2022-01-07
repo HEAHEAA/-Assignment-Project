@@ -9,7 +9,7 @@ matplotlib.rcParams['axes.unicode_minus'] = False #한글폰트 -깨짐현상
 
 
 # 1.데이터 불러오기
-df = pd.read_csv('./data/1. 19년도-과정이수및평가점수.csv', usecols=[1,4])
+df = pd.read_csv('./-Assignment-Project/data/1. 19년도-과정이수및평가점수.csv', usecols=[1,4])
 # df.head()
 # df.info()
 
@@ -33,7 +33,7 @@ rater=rate.round(2)
 ratedesc=rater.sort_values('A과목이수',ascending=False)
 # ratedesc.head()
 crate = ratedesc.reset_index()
-# crate.head()
+crate.head()
 
 # 3.데이터 시각화
 plt.title('A과목이수율')
