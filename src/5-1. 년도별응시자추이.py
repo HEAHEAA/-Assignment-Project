@@ -9,11 +9,23 @@ df.info
 all = df.groupby(['연도']).sum('응시자수')
 all.head()
 
+
+
+
 # 연도별 응시 학과 수-실패
 second = df.groupby(['연도'and'학과'])
 second.head()
 
 df.groupby(['연도']).size
+
+# second.groupby(['연도']).size
+
+
+
+
+
+
+
 
 
 
