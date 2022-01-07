@@ -72,7 +72,7 @@ Ei_df = dfE[dfE['E과목이수'] == 2]
 Eim_df = Ei_df.mean()
 Eim_df
 
-#다음
+#하나의 데이터프레임으로 합쳐주기
 
 all = pd.DataFrame({'과목':['A과목','B과목','C과목','D과목','E과목'],
     '이수자':[Acm_df['A과목점수'],Bcm_df['B과목점수'],Ccm_df['C과목점수'],Dcm_df['D과목점수'],Ecm_df['E과목점수']],
@@ -83,16 +83,20 @@ all.head()
 com = all.round(4)
 com.head()
 
-
+# 다른 버전
+# Aim_df['A과목점수']
 # all = pd.DataFrame({
-#     'A과목':[Acm_df['A과목점수'],[Aim_df['A과목점수']],
-#     'B과목':[Bcm_df['B과목점수'],[Bim_df['B과목점수']],
-#     'C과목':[Ccm_df['C과목점수'],[Cim_df['C과목점수']],
-#     'D과목':[Dcm_df['D과목점수'],[Dim_df['D과목점수']],
-#     'E과목':[Ecm_df['E과목점수'],[Eim_df['E과목점수']]
-#     },index=['이수자','미이수자'])
+#     'A':['A과목',Acm_df['A과목점수'],Aim_df['A과목점수']],
+#     'B':['B과목',Bcm_df['B과목점수'],Bim_df['B과목점수']],
+#     'C':['C과목',Ccm_df['C과목점수'],Cim_df['C과목점수']],
+#     'D':['D과목',Dcm_df['D과목점수'],Dim_df['D과목점수']],
+#     'E':['E과목',Ecm_df['E과목점수'],Eim_df['E과목점수']]
+#     },index=['과목','이수자','미이수자'])
 
 # all.head()
+# # all = all.reset_index()
+# com = all.round(4)
+# com.head()
 
 
 
@@ -100,8 +104,8 @@ com.head()
 plt.title('과목별 이수여부 점수비교') #그래프 이름 지어주기
 plt.xlabel('과목') #y축 레이블 이름 지어주기
 plt.ylabel('이수여부') #y축 레이블 이름 지어주기
-plt.plot(com['과목'],com['이수자'],label='x축:과목 y축:이수여부') #x축, y축, 레이블 설명
-plt.plot(com['과목'],com['미이수자'],label='x축:과목 y축:이수여부') #x축, y축, 레이블 설명
+plt.plot(com['과목'],com['이수자'],label='이수자 평균 점수',color='red') #x축, y축, 레이블 설명
+plt.plot(com['과목'],com['미이수자'],label='미이수자 평균점수',color='blue') #x축, y축, 레이블 설명
 plt.legend()
 plt.ylim([3,5]) #y축 범위 설정
 # plt.xticks(rotation=45, ha='right') #x축 항목 기울기 설정
