@@ -36,13 +36,13 @@ crate = ratedesc.reset_index()
 crate.head()
 
 # 3.데이터 시각화
-plt.title('A과목이수율')
-plt.xlabel('학과')
-plt.ylabel('A과목이수')
-plt.bar(crate['학과'],crate['A과목이수'],label='x축:학과 y축:이수율')
+plt.title('A과목이수율') #그래프 이름 지어주기
+plt.xlabel('학과') #y축 레이블 이름 지어주기
+plt.ylabel('A과목이수율') #y축 레이블 이름 지어주기
+plt.bar(crate['학과'],crate['A과목이수'],label='x축:학과 y축:이수율') #x축, y축, 레이블 설명
 plt.legend()
-plt.ylim([0,.25])
-plt.xticks(rotation=45, ha='right')
+plt.ylim([0,.25]) #y축 범위 설정
+plt.xticks(rotation=45, ha='right') #x축 항목 기울기 설정
 plt.show()
 
 # compc = compc.reset_index()
